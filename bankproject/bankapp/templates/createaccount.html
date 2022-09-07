@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Banking solution</title>
+    <style>
+        #main{
+            width: 400px;
+            height: 400px;
+            border: 1px solid white;
+            margin: 0px auto;
+            margin-top: 100px;
+        }
+        #main h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+    <div id="main">
+        <h1>Create New Account</h1>
+   
+    <form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+        <table style="margin:0 auto;width:80%;">
+            <tr>
+                <td style="color:white">Enter Name:</td>
+                <td>
+                    <input type="text" Name="name">
+                </td>
+            </tr>
+            <tr>
+                <td style="color:white">Select gender:</td>
+                <td style="color:white">
+                    <input type="radio" name="gender" value="male">male
+                    <input type="radio" name="gender" value="female">female
+                </td>
+            </tr>
+           <tr>
+            <td style="color:white">Enter Address:</td>
+            <td>
+                <textarea name="address"></textarea>
+            </td>
+           </tr>
+           <tr>
+            <td style="color:white">Enter Contact no:</td>
+            <td>
+                <input type="number" Name="contactno">
+            </td>
+           </tr>
+           <tr>
+            <td style="color:white">Enter Emailaddress:</td>
+            <td>
+                <input type="email" Name="emailaddress">
+            </td>
+           </tr>
+           <tr>
+            <td style="color:white">Pan number:</td>
+            <td>
+                <input type="text" Name="panno">
+            </td>
+           </tr>
+           <tr>
+            <td style="color:white">Aadhar number:</td>
+            <td>
+                <input type="number" Name="aadharno">
+            </td>
+           </tr>
+           <tr>
+            <td style="color:white">Enter Opening Balance:</td>
+            <td>
+                <input type="text" Name="balance">
+            </td>
+           </tr>
+
+           <tr>
+            <td style="color:white">enter Password:</td>
+            <td>
+                <input type="password" Name="password">
+            </td>
+           </tr>
+           <tr>
+               <td></td>
+               <td>
+                   <input type="submit" value="create">
+               </td>
+           </tr>
+        </table>
+    </form>
+</div>   
+</body>
+</html>

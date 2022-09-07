@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-banking Solution</title>
+    <style>
+        #main{
+            width: 500px;
+            height: 200px;
+            border: 1px solid white;
+            margin:0 auto;
+            margin-top: 100px;
+        }
+        #main h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+   <div id="main">
+       <h1>Withdraw amount</h1>
+       <form action="{% url 'withdrawamt' %}" method="post">
+        {% csrf_token %}
+           <table style="margin: 0 auto;width:90%;">
+               <tr>
+                <td style="color:white">Enter_Amount_To_Withdraw:</td>
+                   <td>
+                       <input type="number" name="amt"/>
+                   </td>
+               </tr>
+               <tr>
+                   <td></td>
+                <td>
+                    <input type="submit" value="Withdraw">
+                </td>
+            </tr>
+
+           </table>
+       </form>
+   </div>
+</body>
+</html>

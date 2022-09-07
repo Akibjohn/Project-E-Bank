@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Banking Solutin</title>
+    <style>
+        #main{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid white;
+        }
+        #main h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+<div id="main">
+    <h1>Login Here</h1>
+    {% if msg %}
+        <p style="text-align:center; color: red;">{{msg}}</p>
+        {% endif %}
+    <form action="{% url 'logcode' %}" method="POST">
+    {% csrf_token %}
+        <table>
+            <tr>
+                <td style="color: white">Enter Account No:</td>
+                <td>
+                    <input type="text" Name="acno">
+                </td>
+            </tr>  
+            <tr>
+                <td style="color:white">Enter Password:</td>
+                <td>
+                    <input type="password" Name="password">
+                </td>
+            </tr>
+            <tr>
+                <td style="color:white">Select operation:</td>
+                <td>
+                    <select name="operation">
+                        <option value="Deposit">Deposit Amount</option>
+                        <option value="Withdraw">Withdraw Amount</option>
+                        <option value="Transfer">Fund_Transfer</option>
+                        <option value="Enquiry">Balance_Enquiry</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="login">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
